@@ -4,7 +4,7 @@ services:
 mail:
     image: mailserver/docker-mailserver:latest
     hostname: mail
-    domainname: example.org
+    domainname: arify.dk
     container_name: mail
     ports:
     - "25:25"
@@ -20,6 +20,7 @@ mail:
     - SSL_TYPE=letsencrypt
     - ONE_DIR=1
     - DMS_DEBUG=1
+    - TLS_LEVEL=modern
     - SPOOF_PROTECTION=0
     - REPORT_RECIPIENT=1
     - ENABLE_SPAMASSASSIN=0
